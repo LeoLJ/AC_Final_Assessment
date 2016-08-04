@@ -71,7 +71,10 @@ class CollectionVC: UIViewController, UICollectionViewDataSource, UICollectionVi
                 print("got some error")
             }
         case 5:
-            print(5)
+            let mail = "mailto:?subject=Testings%20Mail!&body=Just%20for%20test"
+            if let url = NSURL(string: mail) {
+                UIApplication.sharedApplication().openURL(url)
+            }
         default:
             break
         }

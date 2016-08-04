@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6F4-6Z-uf0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="7UC-jV-NBd">
+            <objects>
+                <tabBarController id="6F4-6Z-uf0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Yhl-Zr-BLP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="XNu-mB-9Tr"/>
+                        <segue destination="xPS-Zt-Jwt" kind="relationship" relationship="viewControllers" id="z1h-ah-ZF8"/>
+                        <segue destination="tGk-Nj-isV" kind="relationship" relationship="viewControllers" id="BKP-bu-fbn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0V-o4-ldN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1147" y="-505"/>
+        </scene>
+        <!--TableView-->
+        <scene sceneID="kiM-zO-qVj">
+            <objects>
+                <viewController id="xPS-Zt-Jwt" customClass="TableVC" customModule="ACFianlAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0x5-V3-vhT"/>
+                        <viewControllerLayoutGuide type="bottom" id="ssQ-BE-jZR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IUd-m3-Xnr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="TableView" id="tPr-fy-hIA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLI-kv-2yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274" y="-1208"/>
+        </scene>
+        <!--AutoLayout-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ACFianlAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +56,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Boi-Oc-thy">
+                                <rect key="frame" x="20" y="423" width="560" height="120"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwe-Ar-TJl">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="120"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-aD-7C6">
+                                        <rect key="frame" x="284" y="0.0" width="276" height="120"/>
+                                        <color key="backgroundColor" red="0.50196078430000002" green="0.85098039219999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Rwe-Ar-TJl" firstAttribute="height" secondItem="e3D-aD-7C6" secondAttribute="height" id="9Ne-ve-A7P"/>
+                                    <constraint firstItem="Rwe-Ar-TJl" firstAttribute="width" secondItem="e3D-aD-7C6" secondAttribute="width" id="NiJ-Lv-I7D"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Boi-Oc-thy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="395" id="GdK-u3-34O"/>
+                            <constraint firstItem="Boi-Oc-thy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Z6w-Hv-xuk"/>
+                            <constraint firstItem="Boi-Oc-thy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dmA-25-7yW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Boi-Oc-thy" secondAttribute="bottom" constant="8" id="phO-uR-gvH"/>
+                            <constraint firstItem="Boi-Oc-thy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="zRw-bb-j1x"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GdK-u3-34O"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="AutoLayout" id="ei5-Rx-6IP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-275" y="-505"/>
+        </scene>
+        <!--CollectionView-->
+        <scene sceneID="4vZ-Nr-1fN">
+            <objects>
+                <viewController id="tGk-Nj-isV" customClass="CollectionVC" customModule="ACFianlAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ars-64-hUR"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddg-qB-fcP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yce-YG-czs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="CollectionView" id="Y9E-9d-Bgd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3K-Xv-yeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279" y="327"/>
         </scene>
     </scenes>
 </document>

@@ -37,9 +37,42 @@
                     <view key="view" contentMode="scaleToFill" id="IUd-m3-Xnr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOs-9q-PH8">
+                                <rect key="frame" x="558" y="20" width="22" height="22"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="xPS-Zt-Jwt" eventType="touchUpInside" id="sKj-lJ-62c"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZq-tL-ybU">
+                                <rect key="frame" x="20" y="50" width="560" height="501"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TVCell" id="NyI-aC-dC2">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NyI-aC-dC2" id="8la-Y7-cqa">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ssQ-BE-jZR" firstAttribute="top" secondItem="jZq-tL-ybU" secondAttribute="bottom" id="594-09-taO"/>
+                            <constraint firstItem="tOs-9q-PH8" firstAttribute="trailing" secondItem="IUd-m3-Xnr" secondAttribute="trailingMargin" id="KFc-Xr-2kq"/>
+                            <constraint firstItem="tOs-9q-PH8" firstAttribute="top" secondItem="0x5-V3-vhT" secondAttribute="bottom" id="RVL-3W-lfb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jZq-tL-ybU" secondAttribute="trailing" id="YHn-gh-37L"/>
+                            <constraint firstItem="jZq-tL-ybU" firstAttribute="leading" secondItem="IUd-m3-Xnr" secondAttribute="leadingMargin" id="jMY-8z-FfB"/>
+                            <constraint firstItem="jZq-tL-ybU" firstAttribute="top" secondItem="tOs-9q-PH8" secondAttribute="bottom" constant="8" id="qMy-R8-HMe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="TableView" id="tPr-fy-hIA"/>
+                    <connections>
+                        <outlet property="tableView" destination="jZq-tL-ybU" id="Qjc-hX-0Rr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLI-kv-2yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,10 +17,10 @@ class CollectionVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         let spaceWidth = CGFloat(20)
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let width = (CGFloat(UIScreen.mainScreen().bounds.width) - CGFloat(spaceWidth * 3)) / 2
         let height = (CGFloat(UIScreen.mainScreen().bounds.height) - CGFloat(spaceWidth * 4)) / 3
-        layout.itemSize = CGSize(width: width, height: height)
+        cellLayout.itemSize = CGSize(width: width, height: height)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,13 +64,13 @@ class CollectionVC: UIViewController, UICollectionViewDataSource, UICollectionVi
             UIApplication.sharedApplication().openURL(setting!)
         case 4://apple map
             let encodedName = "104台北市中山區南京東路二段97號".stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())
-            let path = "http://maps.apple.com/?q=" + encodedName!
+            let path = "http://maps.google.com/?q=" + encodedName!
             if let url = NSURL(string: path) {
                 UIApplication.sharedApplication().openURL(url)
             } else {
                 print("got some error")
             }
-        case 5:
+        case 5://Send mail
             let mail = "mailto:?subject=Testings%20Mail!&body=Just%20for%20test"
             if let url = NSURL(string: mail) {
                 UIApplication.sharedApplication().openURL(url)

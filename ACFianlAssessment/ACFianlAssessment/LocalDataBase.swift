@@ -12,5 +12,18 @@ class LocalDataBase: NSObject {
     static let shareInstance = LocalDataBase()
     
     let collectionListArray = ["AlertView", "ActionSheet", "Call 117", "OpenSetting", "Go AlphaCamp", "Send Mail"]
+    var photoAlbum = [Photo]()
 
+}
+
+class Photo {
+    
+    var photoName: String?
+    var photoImage: UIImage?
+    
+    init(photoName: String?, photoImage: UIImage?)
+    {
+        self.photoName = photoName
+        self.photoImage = photoImage
+    }
 }

@@ -46,16 +46,30 @@ class CollectionVC: UIViewController, UICollectionViewDataSource, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
-        case 0:
-            print(0)
-        case 1:
-            print(1)
-        case 2:
-            print(2)
-        case 3:
-            print(3)
-        case 4:
-            print(4)
+        case 0://Alert View
+            let alert = UIAlertController(title: "Oops", message: "oh", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        case 1://Action Sheet
+            let alert = UIAlertController(title: "Oops", message: "yo", preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        case 2://Call 117
+            if let url = NSURL(string: "tel://117)") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        case 3://open setting
+            let setting = NSURL(string: UIApplicationOpenSettingsURLString)
+            UIApplication.sharedApplication().openURL(setting!)
+        case 4://apple map
+            let encodedName = "104台北市中山區南京東路二段97號".stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())
+            let path = "http://maps.apple.com/?q=" + encodedName!
+            if let url = NSURL(string: path) {
+                UIApplication.sharedApplication().openURL(url)
+            } else {
+                print("got some error")
+            }
         case 5:
             print(5)
         default:

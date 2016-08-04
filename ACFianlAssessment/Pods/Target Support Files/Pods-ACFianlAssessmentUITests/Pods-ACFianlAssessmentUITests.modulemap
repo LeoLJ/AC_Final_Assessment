@@ -1,0 +1,6 @@
+framework module Pods_ACFianlAssessmentUITests {
+  umbrella header "Pods-ACFianlAssessmentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_ACFianlAssessment {
+  umbrella header "Pods-ACFianlAssessment-umbrella.h"
+
+  export *
+  module * { export * }
+}

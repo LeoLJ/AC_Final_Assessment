@@ -15,5 +15,13 @@ http://stackoverflow.com/a/33343958 to check how to use it
 Using Alamofire to get value of "origin" for Q3.1.
 Using .timeIntervalSinceNow to calculate sending time and current time for Q3.2.
 
+Question 4: At CollectionVC
+reference:
+apple document about url
+
+Question 5: At TableVC, CheckVC and DetailVC
+Using two different viewControllers to do checking and creating.
+Using CoreData to store in local side and using timsStamp to control FILO.
+
 
 

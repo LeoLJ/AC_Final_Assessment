@@ -10,8 +10,10 @@ fix height and dynamic width. Also setting equals height and width between two s
 
 Question 3: At ViewController
 reference:
-http://nsdateformatter.com/ to get time formate
-http://stackoverflow.com/a/33343958 to check how to use it
+//to get time formate
+http://nsdateformatter.com/ 
+//to check how to use it
+http://stackoverflow.com/a/33343958 
 Using Alamofire to get value of "origin" for Q3.1.
 Using .timeIntervalSinceNow to calculate sending time and current time for Q3.2.
 
@@ -20,6 +22,11 @@ reference:
 apple document about url
 
 Question 5: At TableVC, CheckVC and DetailVC
+reference:
+//adding timeStamp
+http://stackoverflow.com/questions/4583889/how-to-save-the-date-and-time-when-a-core-data-object-is-created/4590190#4590190
+//sharing with UIActivityViewController
+http://stackoverflow.com/questions/32842248/swift-uiactivityviewcontroller-imageurl-share-not-working-with-fb
 Using two different viewControllers to do checking and creating.
 Using CoreData to store in local side and using timsStamp to control FILO.
 

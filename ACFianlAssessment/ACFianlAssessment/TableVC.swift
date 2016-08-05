@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     @IBOutlet weak var tableView: UITableView!
     var tempImage: UIImage?
     let refreshControl: UIRefreshControl = UIRefreshControl()
@@ -16,13 +20,13 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
-        self.tableView.reloadData()
+        loadData()
         refreshControl.addTarget(self, action: #selector(TableVC.refresh), forControlEvents: .ValueChanged)
         self.tableView.addSubview(refreshControl)
     }
     
     func refresh() {
-        self.tableView.reloadData()
+        loadData()
         refreshControl.endRefreshing()
     }
 
@@ -38,6 +42,22 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    func loadData() {
+        do {
+            let fetchRequest = NSFetchRequest(entityName: "Photo")
+            let sortPhoto = NSSortDescriptor(key: "photoImage", ascending: false)
+            let sortText = NSSortDescriptor(key: "photoText", ascending: false)
+            fetchRequest.sortDescriptors = [sortPhoto, sortText]
+            LocalDataBase.shareInstance.photoAlbum = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Photo]
+//            let localPhoto = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Photo]
+//            LocalDataBase.shareInstance.photoAlbum.insert(localPhoto, atIndex: 0)
+            
+            self.tableView.reloadData()
+        } catch {
+            print(error)
+        }
+    }
+    
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -51,8 +71,9 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCellWithIdentifier("TVCell", forIndexPath: indexPath)
-    cell.textLabel?.text = LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoName
-    cell.imageView?.image = LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoImage
+    cell.textLabel?.text = LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoText
+    let image = UIImage(data: LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoImage!)
+    cell.imageView?.image = image
 //    
 //    cell.imageView?.layer.cornerRadius = 10
 //    cell.imageView?.layer.masksToBounds = true
@@ -62,9 +83,13 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
     
-    LocalDataBase.shareInstance.photoAlbum.removeAtIndex(indexPath.row)
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    
+//    LocalDataBase.shareInstance.photoAlbum.removeAtIndex(indexPath.row)
+//    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        
+        let photo = LocalDataBase.shareInstance.photoAlbum[indexPath.row]
+        managedObjectContext.deleteObject(photo)
+        appDelegate.saveContext()
+        loadData()
     } else if editingStyle == .Insert {
     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }

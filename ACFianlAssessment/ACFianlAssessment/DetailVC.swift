@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailVC: UIViewController, UITextFieldDelegate {
+    
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     @IBOutlet weak var currentImageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -50,8 +54,14 @@ class DetailVC: UIViewController, UITextFieldDelegate {
     
     override func willMoveToParentViewController(parent: UIViewController?) {
         if parent == nil {
-            let currentDate = Photo(photoName: textField.text, photoImage: newImage)
-            LocalDataBase.shareInstance.photoAlbum.insert(currentDate, atIndex: 0)
+            let imageData = UIImagePNGRepresentation(newImage!)
+            let currentData = NSEntityDescription.insertNewObjectForEntityForName("Photo", inManagedObjectContext: managedObjectContext) as? Photo
+            currentData?.photoText = textField.text
+            currentData?.photoImage = imageData
+            appDelegate.saveContext()
+            
+//            let data = Photos(photoName: textField.text, photoImage: newImage)
+//           LocalDataBase.shareInstance.photoAlbum.insert(data, atIndex: 0)
         }
     }
 

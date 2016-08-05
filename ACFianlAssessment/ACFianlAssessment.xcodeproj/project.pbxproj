@@ -10,6 +10,9 @@
 		0A8A24AA1A0F998EA2F7718A /* Pods_ACFianlAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6534EEA37FB3C81320475A3A /* Pods_ACFianlAssessment.framework */; };
 		A184F9520A63097D7618634C /* Pods_ACFianlAssessmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3B7D06BA414DAD7FD2AEF3 /* Pods_ACFianlAssessmentUITests.framework */; };
 		A65BB3711D549FF20085F23D /* CheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BB3701D549FF20085F23D /* CheckVC.swift */; };
+		A65BB3771D54B09E0085F23D /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65BB3751D54B09E0085F23D /* CoreData.xcdatamodeld */; };
+		A65BB37A1D54B2FF0085F23D /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BB3781D54B2FF0085F23D /* Photo+CoreDataProperties.swift */; };
+		A65BB37B1D54B2FF0085F23D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65BB3791D54B2FF0085F23D /* Photo.swift */; };
 		A694E6E11D52FF2000C24CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E6E01D52FF2000C24CBD /* AppDelegate.swift */; };
 		A694E6E31D52FF2000C24CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E6E21D52FF2000C24CBD /* ViewController.swift */; };
 		A694E6E61D52FF2000C24CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A694E6E41D52FF2000C24CBD /* Main.storyboard */; };
@@ -53,6 +56,9 @@
 		90BAD5D65EB4B3624E8CE7DB /* Pods-ACFianlAssessmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACFianlAssessmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACFianlAssessmentUITests/Pods-ACFianlAssessmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5F5B8B08F670B59BD6DCEDE /* Pods-ACFianlAssessmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACFianlAssessmentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ACFianlAssessmentTests/Pods-ACFianlAssessmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A65BB3701D549FF20085F23D /* CheckVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVC.swift; sourceTree = "<group>"; };
+		A65BB3761D54B09E0085F23D /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		A65BB3781D54B2FF0085F23D /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A65BB3791D54B2FF0085F23D /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A694E6DD1D52FF2000C24CBD /* ACFianlAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACFianlAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A694E6E01D52FF2000C24CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A694E6E21D52FF2000C24CBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				A694E7161D5351C600C24CBD /* CVCell.swift */,
 				A694E7181D53B09900C24CBD /* DetailVC.swift */,
 				A65BB3701D549FF20085F23D /* CheckVC.swift */,
+				A65BB3751D54B09E0085F23D /* CoreData.xcdatamodeld */,
+				A65BB3781D54B2FF0085F23D /* Photo+CoreDataProperties.swift */,
+				A65BB3791D54B2FF0085F23D /* Photo.swift */,
 			);
 			path = ACFianlAssessment;
 			sourceTree = "<group>";
@@ -448,13 +457,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65BB37B1D54B2FF0085F23D /* Photo.swift in Sources */,
 				A65BB3711D549FF20085F23D /* CheckVC.swift in Sources */,
 				A694E7151D534FE100C24CBD /* LocalDataBase.swift in Sources */,
+				A65BB3771D54B09E0085F23D /* CoreData.xcdatamodeld in Sources */,
 				A694E6E31D52FF2000C24CBD /* ViewController.swift in Sources */,
 				A694E7111D53098500C24CBD /* TableVC.swift in Sources */,
 				A694E70F1D52FF5000C24CBD /* Algorithm.swift in Sources */,
 				A694E7171D5351C600C24CBD /* CVCell.swift in Sources */,
 				A694E7191D53B09900C24CBD /* DetailVC.swift in Sources */,
+				A65BB37A1D54B2FF0085F23D /* Photo+CoreDataProperties.swift in Sources */,
 				A694E6E11D52FF2000C24CBD /* AppDelegate.swift in Sources */,
 				A694E7131D53099B00C24CBD /* CollectionVC.swift in Sources */,
 			);
@@ -710,6 +722,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A65BB3751D54B09E0085F23D /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A65BB3761D54B09E0085F23D /* CoreData.xcdatamodel */,
+			);
+			currentVersion = A65BB3761D54B09E0085F23D /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A694E6D51D52FF2000C24CBD /* Project object */;
 }

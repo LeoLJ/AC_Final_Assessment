@@ -20,8 +20,8 @@ class CheckVC: UIViewController, UIScrollViewDelegate {
         self.scrollView.delegate = self
         self.scrollView.maximumZoomScale = 5.0
         self.scrollView.minimumZoomScale = 1.1
-        self.checkImageView.image = LocalDataBase.shareInstance.photoAlbum[index!].photoImage
-        self.textLabel.text = LocalDataBase.shareInstance.photoAlbum[index!].photoName
+        self.checkImageView.image = UIImage(data: LocalDataBase.shareInstance.photoAlbum[index!].photoImage!)
+        self.textLabel.text = LocalDataBase.shareInstance.photoAlbum[index!].photoText
         // Do any additional setup after loading the view.
     }
     
@@ -35,8 +35,8 @@ class CheckVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func shareButton(sender: AnyObject) {
-            let sharePhoto = LocalDataBase.shareInstance.photoAlbum[index!].photoImage
-            let shareText = LocalDataBase.shareInstance.photoAlbum[index!].photoName
+            let sharePhoto = UIImage(data:LocalDataBase.shareInstance.photoAlbum[index!].photoImage!)
+            let shareText = LocalDataBase.shareInstance.photoAlbum[index!].photoText
             
         let shareItems:[AnyObject] = [sharePhoto!, shareText!]
             let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)

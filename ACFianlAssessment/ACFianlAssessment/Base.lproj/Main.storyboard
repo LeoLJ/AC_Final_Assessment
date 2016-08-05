@@ -55,6 +55,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BFY-in-1ts" kind="show" identifier="checkView" id="KM5-NC-ERw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -72,7 +75,7 @@
                     <navigationItem key="navigationItem" id="AJq-pj-mpb"/>
                     <connections>
                         <outlet property="tableView" destination="jZq-tL-ybU" id="Qjc-hX-0Rr"/>
-                        <segue destination="DCF-uP-fPr" kind="show" identifier="addPhoto" id="tNi-8M-8db"/>
+                        <segue destination="DCF-uP-fPr" kind="show" identifier="detailView" id="tNi-8M-8db"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLI-kv-2yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,6 +124,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYa-AY-3ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1407" y="-1208"/>
+        </scene>
+        <!--CheckVC-->
+        <scene sceneID="Vxm-u0-WHH">
+            <objects>
+                <viewController id="BFY-in-1ts" customClass="CheckVC" customModule="ACFianlAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uGC-zh-TrL"/>
+                        <viewControllerLayoutGuide type="bottom" id="rog-mW-ocl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eLY-f8-Kit">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdO-2a-2Wm">
+                                <rect key="frame" x="150" y="458" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhP-2Y-e5z">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-kn-bkZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nU5-kn-bkZ" secondAttribute="trailing" id="9rQ-6g-27m"/>
+                                    <constraint firstAttribute="height" constant="300" id="Kub-Uw-Vbd"/>
+                                    <constraint firstItem="nU5-kn-bkZ" firstAttribute="top" secondItem="YhP-2Y-e5z" secondAttribute="top" id="Q9Y-Zx-f8I"/>
+                                    <constraint firstItem="nU5-kn-bkZ" firstAttribute="leading" secondItem="YhP-2Y-e5z" secondAttribute="leading" id="Zbo-Ip-P98"/>
+                                    <constraint firstAttribute="bottom" secondItem="nU5-kn-bkZ" secondAttribute="bottom" id="n1t-hQ-SuU"/>
+                                    <constraint firstItem="nU5-kn-bkZ" firstAttribute="width" secondItem="YhP-2Y-e5z" secondAttribute="width" id="pu8-WI-h44"/>
+                                    <constraint firstItem="nU5-kn-bkZ" firstAttribute="height" secondItem="YhP-2Y-e5z" secondAttribute="height" id="upI-lf-jFL"/>
+                                    <constraint firstAttribute="width" constant="300" id="vwZ-tD-gJ0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YhP-2Y-e5z" firstAttribute="centerY" secondItem="eLY-f8-Kit" secondAttribute="centerY" id="OwO-IK-YMo"/>
+                            <constraint firstItem="YdO-2a-2Wm" firstAttribute="centerX" secondItem="eLY-f8-Kit" secondAttribute="centerX" id="V50-oE-vMy"/>
+                            <constraint firstItem="YdO-2a-2Wm" firstAttribute="top" secondItem="YhP-2Y-e5z" secondAttribute="bottom" constant="8" id="fCU-2d-opJ"/>
+                            <constraint firstItem="YdO-2a-2Wm" firstAttribute="width" secondItem="YhP-2Y-e5z" secondAttribute="width" id="jrb-4G-TsZ"/>
+                            <constraint firstItem="YhP-2Y-e5z" firstAttribute="centerX" secondItem="eLY-f8-Kit" secondAttribute="centerX" id="veJ-jC-EMc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkImageView" destination="nU5-kn-bkZ" id="jcO-rD-uct"/>
+                        <outlet property="scrollView" destination="YhP-2Y-e5z" id="GJ3-7Y-afT"/>
+                        <outlet property="textLabel" destination="YdO-2a-2Wm" id="Tts-cB-Jzq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGS-6s-15J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="-433"/>
         </scene>
         <!--AutoLayout-->
         <scene sceneID="tne-QT-ifu">

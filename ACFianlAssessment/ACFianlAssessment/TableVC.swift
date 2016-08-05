@@ -78,10 +78,14 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "addPhoto" {
+        if segue.identifier == "detailView" {
             let vc = segue.destinationViewController as! DetailVC
             vc.newImage = self.tempImage
+        } else if segue.identifier == "checkView" {
+            let vc = segue.destinationViewController as! CheckVC
+            vc.index = self.tableView.indexPathForSelectedRow?.row
         }
+        
     }
     
     
@@ -91,7 +95,7 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
         let currentImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
         self.dismissViewControllerAnimated(true, completion: {
             self.tempImage = currentImage
-            self.performSegueWithIdentifier("addPhoto", sender: nil)
+            self.performSegueWithIdentifier("detailView", sender: nil)
         })
     }
     

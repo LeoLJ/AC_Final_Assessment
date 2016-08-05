@@ -21,6 +21,7 @@
 		A694E7131D53099B00C24CBD /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E7121D53099B00C24CBD /* CollectionVC.swift */; };
 		A694E7151D534FE100C24CBD /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E7141D534FE100C24CBD /* LocalDataBase.swift */; };
 		A694E7171D5351C600C24CBD /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E7161D5351C600C24CBD /* CVCell.swift */; };
+		A694E7191D53B09900C24CBD /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A694E7181D53B09900C24CBD /* DetailVC.swift */; };
 		FF2626FD568D38B54FB6CA8B /* Pods_ACFianlAssessmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846767931426F32AA0503C5B /* Pods_ACFianlAssessmentTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		A694E7121D53099B00C24CBD /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		A694E7141D534FE100C24CBD /* LocalDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
 		A694E7161D5351C600C24CBD /* CVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCell.swift; sourceTree = "<group>"; };
+		A694E7181D53B09900C24CBD /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		CC3B7D06BA414DAD7FD2AEF3 /* Pods_ACFianlAssessmentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACFianlAssessmentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				A694E6EC1D52FF2100C24CBD /* Info.plist */,
 				A694E70E1D52FF5000C24CBD /* Algorithm.swift */,
 				A694E7161D5351C600C24CBD /* CVCell.swift */,
+				A694E7181D53B09900C24CBD /* DetailVC.swift */,
 			);
 			path = ACFianlAssessment;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				A694E7111D53098500C24CBD /* TableVC.swift in Sources */,
 				A694E70F1D52FF5000C24CBD /* Algorithm.swift in Sources */,
 				A694E7171D5351C600C24CBD /* CVCell.swift in Sources */,
+				A694E7191D53B09900C24CBD /* DetailVC.swift in Sources */,
 				A694E6E11D52FF2000C24CBD /* AppDelegate.swift in Sources */,
 				A694E7131D53099B00C24CBD /* CollectionVC.swift in Sources */,
 			);

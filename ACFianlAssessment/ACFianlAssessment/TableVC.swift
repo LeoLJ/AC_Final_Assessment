@@ -8,14 +8,22 @@
 
 import UIKit
 
-class TableVC: UIViewController, UITableViewDataSource {
+class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
+    var tempImage: UIImage?
+    let refreshControl: UIRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after varding the view.
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
+        refreshControl.addTarget(self, action: #selector(TableVC.refresh), forControlEvents: .ValueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    func refresh() {
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +32,10 @@ class TableVC: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func addPhoto(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .Camera
+        imagePicker.delegate = self
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     
@@ -38,20 +50,13 @@ class TableVC: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCellWithIdentifier("BookDetailCell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("TVCell", forIndexPath: indexPath)
     cell.textLabel?.text = LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoName
     cell.imageView?.image = LocalDataBase.shareInstance.photoAlbum[indexPath.row].photoImage
-    
-    cell.imageView?.layer.cornerRadius = 10
-    cell.imageView?.layer.masksToBounds = true
+//    
+//    cell.imageView?.layer.cornerRadius = 10
+//    cell.imageView?.layer.masksToBounds = true
     return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    if segue.identifier == "GoCheckingPage" {
-//    let vc = segue.destinationViewController as! DetailOfBookVC
-//    vc.index = listTableView.indexPathForSelectedRow?.row
-//    }
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -62,18 +67,33 @@ class TableVC: UIViewController, UITableViewDataSource {
     
     } else if editingStyle == .Insert {
     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
+        }
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "addPhoto" {
+            let vc = segue.destinationViewController as! DetailVC
+            vc.newImage = self.tempImage
+        }
     }
-    */
-
+    
+    
+    func imagePickerController(picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        //print("info \(info)")
+        let currentImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
+        self.dismissViewControllerAnimated(true, completion: {
+            self.tempImage = currentImage
+            self.performSegueWithIdentifier("addPhoto", sender: nil)
+        })
+    }
+    
 }
+

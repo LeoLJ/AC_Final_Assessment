@@ -132,6 +132,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A65BB37C1D54D1220085F23D /* M */ = {
+			isa = PBXGroup;
+			children = (
+				A694E70E1D52FF5000C24CBD /* Algorithm.swift */,
+				A694E7141D534FE100C24CBD /* LocalDataBase.swift */,
+				A65BB3781D54B2FF0085F23D /* Photo+CoreDataProperties.swift */,
+				A65BB3791D54B2FF0085F23D /* Photo.swift */,
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
+		A65BB37D1D54D12A0085F23D /* V */ = {
+			isa = PBXGroup;
+			children = (
+				A694E6E41D52FF2000C24CBD /* Main.storyboard */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		A65BB37E1D54D12F0085F23D /* C */ = {
+			isa = PBXGroup;
+			children = (
+				A694E6E21D52FF2000C24CBD /* ViewController.swift */,
+				A694E7101D53098500C24CBD /* TableVC.swift */,
+				A694E7121D53099B00C24CBD /* CollectionVC.swift */,
+				A694E7161D5351C600C24CBD /* CVCell.swift */,
+				A694E7181D53B09900C24CBD /* DetailVC.swift */,
+				A65BB3701D549FF20085F23D /* CheckVC.swift */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
 		A694E6D41D52FF2000C24CBD = {
 			isa = PBXGroup;
 			children = (
@@ -157,22 +189,14 @@
 		A694E6DF1D52FF2000C24CBD /* ACFianlAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				A65BB37E1D54D12F0085F23D /* C */,
+				A65BB37D1D54D12A0085F23D /* V */,
+				A65BB37C1D54D1220085F23D /* M */,
 				A694E6E01D52FF2000C24CBD /* AppDelegate.swift */,
-				A694E7141D534FE100C24CBD /* LocalDataBase.swift */,
-				A694E6E21D52FF2000C24CBD /* ViewController.swift */,
-				A694E7101D53098500C24CBD /* TableVC.swift */,
-				A694E7121D53099B00C24CBD /* CollectionVC.swift */,
-				A694E6E41D52FF2000C24CBD /* Main.storyboard */,
 				A694E6E71D52FF2100C24CBD /* Assets.xcassets */,
 				A694E6E91D52FF2100C24CBD /* LaunchScreen.storyboard */,
 				A694E6EC1D52FF2100C24CBD /* Info.plist */,
-				A694E70E1D52FF5000C24CBD /* Algorithm.swift */,
-				A694E7161D5351C600C24CBD /* CVCell.swift */,
-				A694E7181D53B09900C24CBD /* DetailVC.swift */,
-				A65BB3701D549FF20085F23D /* CheckVC.swift */,
 				A65BB3751D54B09E0085F23D /* CoreData.xcdatamodeld */,
-				A65BB3781D54B2FF0085F23D /* Photo+CoreDataProperties.swift */,
-				A65BB3791D54B2FF0085F23D /* Photo.swift */,
 			);
 			path = ACFianlAssessment;
 			sourceTree = "<group>";

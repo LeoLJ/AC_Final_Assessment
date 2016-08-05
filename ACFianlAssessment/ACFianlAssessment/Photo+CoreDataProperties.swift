@@ -16,5 +16,6 @@ extension Photo {
 
     @NSManaged var photoImage: NSData?
     @NSManaged var photoText: String?
+    @NSManaged var creationDate: NSDate?
 
 }

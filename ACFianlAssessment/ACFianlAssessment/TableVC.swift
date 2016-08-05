@@ -45,9 +45,10 @@ class TableVC: UIViewController, UITableViewDataSource, UIImagePickerControllerD
     func loadData() {
         do {
             let fetchRequest = NSFetchRequest(entityName: "Photo")
-            let sortPhoto = NSSortDescriptor(key: "photoImage", ascending: false)
-            let sortText = NSSortDescriptor(key: "photoText", ascending: false)
-            fetchRequest.sortDescriptors = [sortPhoto, sortText]
+//            let sortPhoto = NSSortDescriptor(key: "photoImage", ascending: false)
+//            let sortText = NSSortDescriptor(key: "photoText", ascending: false)
+            let sortTime = NSSortDescriptor(key: "creationDate", ascending: false)
+            fetchRequest.sortDescriptors = [sortTime]
             LocalDataBase.shareInstance.photoAlbum = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Photo]
 //            let localPhoto = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Photo]
 //            LocalDataBase.shareInstance.photoAlbum.insert(localPhoto, atIndex: 0)

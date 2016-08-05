@@ -161,12 +161,21 @@
                                     <constraint firstAttribute="width" constant="300" id="vwZ-tD-gJ0"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq0-dc-tsS">
+                                <rect key="frame" x="540" y="72" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareButton:" destination="BFY-in-1ts" eventType="touchUpInside" id="Y9K-8Y-ot2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YhP-2Y-e5z" firstAttribute="centerY" secondItem="eLY-f8-Kit" secondAttribute="centerY" id="OwO-IK-YMo"/>
                             <constraint firstItem="YdO-2a-2Wm" firstAttribute="centerX" secondItem="eLY-f8-Kit" secondAttribute="centerX" id="V50-oE-vMy"/>
+                            <constraint firstItem="Aq0-dc-tsS" firstAttribute="top" secondItem="uGC-zh-TrL" secondAttribute="bottom" constant="8" id="dcO-Ei-8pW"/>
                             <constraint firstItem="YdO-2a-2Wm" firstAttribute="top" secondItem="YhP-2Y-e5z" secondAttribute="bottom" constant="8" id="fCU-2d-opJ"/>
+                            <constraint firstItem="Aq0-dc-tsS" firstAttribute="trailing" secondItem="eLY-f8-Kit" secondAttribute="trailingMargin" id="g9P-oU-l7a"/>
                             <constraint firstItem="YdO-2a-2Wm" firstAttribute="width" secondItem="YhP-2Y-e5z" secondAttribute="width" id="jrb-4G-TsZ"/>
                             <constraint firstItem="YhP-2Y-e5z" firstAttribute="centerX" secondItem="eLY-f8-Kit" secondAttribute="centerX" id="veJ-jC-EMc"/>
                         </constraints>

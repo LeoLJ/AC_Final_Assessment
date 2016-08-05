@@ -34,6 +34,16 @@ class CheckVC: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func shareButton(sender: AnyObject) {
+            let sharePhoto = LocalDataBase.shareInstance.photoAlbum[index!].photoImage
+            let shareText = LocalDataBase.shareInstance.photoAlbum[index!].photoName
+            
+        let shareItems:[AnyObject] = [sharePhoto!, shareText!]
+            let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList, UIActivityTypePostToVimeo]
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation
